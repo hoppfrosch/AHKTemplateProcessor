@@ -18,6 +18,7 @@
 #include DbgOut.ahk
 #include %A_LineFile%\..\TP
 #include TPStash.ahk
+#include TPConfiguration.ahk
 
 global gTempl := ""
 
@@ -31,6 +32,8 @@ class TemplateProcessor {
       this.logger := new dbgOut()
 
     this.logger.debug := this._debug
+    this.config := new TPConfiguration()
+
     this.logger.log("=[" A_ThisFunc "()]")
     Return this
     }
@@ -42,7 +45,7 @@ class TemplateProcessor {
     ; this.logger.log(objPrint(s))
     
     this.logger.log(">[" A_ThisFunc "(templ=`"" templ "`", ...)]")
-    pattern := "(" this.leftDelimiter "\s*((?:\w+)(?:\.(?:\w+))*)\s*" this.rightDelimiter ")" 
+    pattern := "(" this.config.leftDelimiter "\s*((?:\w+)(?:\.(?:\w+))*)\s*" this.config.rightDelimiter ")" 
     this.logger.log("|[" A_ThisFunc "()] Pattern: " pattern)
 
     FoundPos := 1
@@ -58,25 +61,5 @@ class TemplateProcessor {
 
     this.logger.log("<[" A_ThisFunc "(...)] -> " retStr)
     return retStr
-  }
-
-  ; ##################### Start of Properties ##############################################
-  leftDelimiter[] {
-  /* ---------------------------------------------------------------------------------------
-  Property: leftDelimiter [get]
-  */
-    get {
-      ret := "\<%="
-      return  ret
-    }
-  }
-  rightDelimiter[] {
-  /* ---------------------------------------------------------------------------------------
-  Property: rightDelimiter [get]
-  */
-    get {
-      ret := "%\>"
-      return  ret
-    }
   }
 }
