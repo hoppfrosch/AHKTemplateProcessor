@@ -10,12 +10,10 @@
 ; #include <TemplateProcessor>
 ; stash := Object()
 ; stash["name"] := "hoppfrosch"
-; stash["nickname"] := "froggie"
+; stash["surname"] := "froggie"
 ; tt := new Template()
-; str := tt.process("Hi Mister <%= name %>, your nickname is <%= surname %>", stash)
+; str := tt.process("Hi Mister <%= name %>, your surname is <%= surname %>", stash)
 ;
-; Credits: 
-; * Class RegEx by Frankie Bagnardi/ R3gX (see http://www.autohotkey.com/board/topic/69236-regex-class/page-2#entry582249)
 #include %A_LineFile%\..\..\DevHelper
 #include DbgOut.ahk
 #include %A_LineFile%\..\TP
@@ -24,7 +22,7 @@
 global gTempl := ""
 
 class TemplateProcessor {
-  _version := "0.4.0"
+  _version := "0.1.0"
   _debug := 0
   
   __new(debug := 0) {

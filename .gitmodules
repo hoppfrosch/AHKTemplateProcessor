@@ -1,0 +1,4 @@
+[submodule "t/YUnit"]
+	path = t/YUnit
+	url = git@github.com:Uberi/Yunit.git
+	branch = v2
