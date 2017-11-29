@@ -22,7 +22,7 @@
 global gTempl := ""
 
 class TemplateProcessor {
-  _version := "0.1.0"
+  _version := "1.0.0"
   _debug := 0
   
   __new(debug := 0) {
