@@ -17,7 +17,7 @@
 RunOrActivate("d:\usr\bin\DebugView++.exe")
 OutputDebug "DBGVIEWCLEAR"
 
-ReferenceVersion := "0.1.0"
+ReferenceVersion := "1.0.0"
 debug := 1
 
 ;Yunit.Use(YunitOutputDebug, YunitWindow).Test(VersionTestSuite, NestedKeyTestSuite, SimpleKeyTestSuite)
